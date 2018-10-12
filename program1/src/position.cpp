@@ -14,8 +14,8 @@ Date: 09/28/2018
 
 #include "position.h"
 
-Position::Position(unsigned lane, unsigned distance, unsigned velocity)
-    : _lane(lane), _distance(distance), _velocity(velocity) {}
+Position::Position(unsigned lane, unsigned distance)
+    : _lane(lane), _distance(distance) {}
 
 unsigned Position::lane() const
 {
@@ -25,24 +25,5 @@ unsigned Position::lane() const
 unsigned Position::distance() const
 {
     return _distance;
-}
-
-unsigned Position::velocity() const
-{
-    return _velocity;
-}
-
-void Position::update(unsigned lane, unsigned distance)
-{
-    _lane = lane;
-    _distance = distance;
-    return;
-}
-
-void Position::accelerate(const int& delta_velocity)
-{
-    // TODO handle overflow
-    _velocity += delta_velocity;
-    return;
 }
 

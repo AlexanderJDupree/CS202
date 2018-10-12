@@ -23,7 +23,6 @@ TEST_CASE("Constructing Vehicle Objects", "[vehicle], [constructors]")
 
         REQUIRE(obj.lane() == 0);
         REQUIRE(obj.distance() == 0);
-        REQUIRE(obj.velocity() == 0);
     }
 }
 

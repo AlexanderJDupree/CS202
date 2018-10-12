@@ -17,19 +17,6 @@ Date: 09/28/2018
 
 TEST_CASE("Constructing position objects", "[position], [constructors]")
 {
-    SECTION("Default Construction")
-    {
-        Position pos;
-
-        REQUIRE(pos.lane() == 0);
-        REQUIRE(pos.distance() == 0);
-    }
-    SECTION("Explicit construction")
-    {
-        Position pos(1, 3);
-
-        REQUIRE(pos.lane() == 1);
-        REQUIRE(pos.distance() == 3);
-    }
+    
 }
 

@@ -17,15 +17,26 @@ Date: 09/28/2018
 const float Vehicle::GRAVITY_ACCELERATION = 9.83;
 
 Vehicle::Vehicle(const int& lane, const int& distance, const int& velocity)
-    : Position(lane, distance, velocity), _friction(.6) {}
+    : Position(lane, distance), _velocity(velocity), _friction(.6) {}
 
 int Vehicle::brake_distance() const
 {
     return (_velocity * _velocity) / (2 * _friction * GRAVITY_ACCELERATION);
 }
 
-Position* Vehicle_Factory::generate(const int& lane, const int& distance)
+Position& Vehicle::update(const Position* obstacle)
 {
-    return new Vehicle(lane, distance);
+    // Nearest obstacle is in path, decelerate and brake
+    if ((_distance += _velocity) >= obstacle->distance())
+    {
+        _distance = obstacle->distance() - 1;
+    }
+
+    return *this;
+}
+
+const char* Vehicle::symbol() const
+{
+    return "C";
 }
 

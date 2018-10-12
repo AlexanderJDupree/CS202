@@ -16,8 +16,9 @@ Date: 09/28/2018
 #define TRAFFIC_MANAGER_H
 
 #include "position.h"
-#include "vehicle.h" // TODO review
 #include "linked_list.h"
+#include "player_vehicle.h"
+#include "traffic_signal.h"
 #include "traffic_matrix.h"
 
 class Traffic_Manager
@@ -39,10 +40,15 @@ class Traffic_Manager
     unsigned length() const;
 
     // Instantiates a vehicle at the specified location
-    bool populate(unsigned lane, unsigned distance);
+    bool populate(unsigned lane, unsigned distance, unsigned velocity=0);
+
+    bool player_populate(unsigned lane, unsigned distance, unsigned velocity);
 
     // Updates each vehicles position in the matrix
     void update();
+
+    // Displays the graphical representation of the street
+    void display() const;
 
   protected:
 

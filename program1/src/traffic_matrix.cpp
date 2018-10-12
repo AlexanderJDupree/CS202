@@ -30,22 +30,23 @@ Traffic_Matrix::Traffic_Matrix(unsigned lanes, unsigned length)
 }
 
 bool Traffic_Matrix::insert(Position* obj)
-{
+{ 
     // Object already located at the position
     if (_matrix[obj->lane()][obj->distance()])
     {
-        return false;
+        // Adjust position based on colliding objects position
+        obj->update(_matrix[obj->lane()][obj->distance()]);
     }
 
     _matrix[obj->lane()][obj->distance()] = obj;
     return true;
 }
 
-void Traffic_Matrix::update(Position* obj)
+bool Traffic_Matrix::update(Position* obj, const Position* obstacle)
 {
-    
-    
+    _matrix[obj->lane()][obj->distance()] = NULL;
 
+    return insert(&obj->update(obstacle));
 }
 
 void Traffic_Matrix::display() const
@@ -81,7 +82,7 @@ void Traffic_Matrix::print_lane(const int& lane) const
         }
         else
         {
-            std::cout << "C";
+            std::cout << _matrix[lane][j]->symbol();
         }
     }
 

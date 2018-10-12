@@ -27,7 +27,7 @@ class Traffic_Matrix
 
     bool insert(Position* obj);
 
-    void update(Position* obj);
+    bool update(Position* obj, const Position* obstacle);
 
     void display() const;
 

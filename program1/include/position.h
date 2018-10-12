@@ -19,21 +19,19 @@ class Position
 {
   public:
 
-    Position(unsigned lane = 0, unsigned distance = 0, unsigned velocity = 0);
+    Position(unsigned lane = 0, unsigned distance = 0);
 
     unsigned lane() const;
     unsigned distance() const;
-    unsigned velocity() const;
 
-    void update(unsigned lane, unsigned distance);
+    virtual Position& update(const Position* obstacle)= 0;
 
-    void accelerate(const int& delta_velocity);
+    virtual const char* symbol() const = 0;
 
   protected:
 
     unsigned _lane;
     unsigned _distance;
-    unsigned _velocity;
 
   private:
 
@@ -43,7 +41,7 @@ class Position_Factory
 {
   public:
 
-    virtual Position* generate(const int& x, const int& y)=0;
+    virtual Position* generate() = 0;
 };
 
 #endif // POSITION_H

@@ -41,7 +41,6 @@ TEST_CASE("Populating the traffic matrix with vehicle objects", "[traffic_matrix
         REQUIRE(matrix.insert(new Vehicle(2, 99)));
 
         matrix.display();
-
     }
 }
 
