@@ -25,9 +25,11 @@ class Traffic_Matrix
 
     Traffic_Matrix(unsigned lanes=1, unsigned length=100);
 
+    ~Traffic_Matrix();
+
     bool insert(Position* obj);
 
-    bool update(Position* obj, const Position* obstacle);
+    void update(Position* obj, const Position* obstacle);
 
     void display() const;
 

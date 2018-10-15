@@ -27,9 +27,6 @@ class Traffic_Signal : public Position
 
     const char* symbol() const;
 
-  protected:
-  private:
-
 };
 
 #endif // TRAFFIC_SIGNAL_H

@@ -23,9 +23,6 @@ class Vehicle : public Position
 
       Vehicle(const int& lane=0, const int& distance=0, const int& velocity=0);
 
-      // Returns the distance required to brake to a stop in meters
-      int brake_distance() const; 
-
       Position& update(const Position* obstacle);
 
       const char* symbol() const;
@@ -33,12 +30,6 @@ class Vehicle : public Position
   protected:
 
       unsigned _velocity;
-
-  private:
-
-      static const float GRAVITY_ACCELERATION; // Used to calc brake distance
-      const float _friction; // Used to calculate brake distance
-
 };
 
 #endif // VEHICLE_H

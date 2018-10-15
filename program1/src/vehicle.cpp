@@ -14,15 +14,9 @@ Date: 09/28/2018
 
 #include "vehicle.h"
 
-const float Vehicle::GRAVITY_ACCELERATION = 9.83;
 
 Vehicle::Vehicle(const int& lane, const int& distance, const int& velocity)
-    : Position(lane, distance), _velocity(velocity), _friction(.6) {}
-
-int Vehicle::brake_distance() const
-{
-    return (_velocity * _velocity) / (2 * _friction * GRAVITY_ACCELERATION);
-}
+    : Position(lane, distance), _velocity(velocity) {}
 
 Position& Vehicle::update(const Position* obstacle)
 {

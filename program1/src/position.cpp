@@ -27,3 +27,9 @@ unsigned Position::distance() const
     return _distance;
 }
 
+void Position::update_collision(const Position* obj)
+{
+    _distance = obj->distance() - 1;
+    return;
+}
+

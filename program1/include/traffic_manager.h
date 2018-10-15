@@ -30,6 +30,8 @@ class Traffic_Manager
     // Depth is the length of the road in meters
     Traffic_Manager(unsigned lanes=1, unsigned length=100);
 
+    ~Traffic_Manager();
+
     // Returns true if the street contains no objects
     bool empty() const;
 
@@ -45,7 +47,7 @@ class Traffic_Manager
     bool player_populate(unsigned lane, unsigned distance, unsigned velocity);
 
     // Updates each vehicles position in the matrix
-    void update();
+    bool update();
 
     // Displays the graphical representation of the street
     void display() const;
@@ -60,6 +62,9 @@ class Traffic_Manager
     lane* _lanes;
 
     Traffic_Matrix _matrix;
+
+    // Updates the player's vehicle to be inserted into the correct lane
+    void update_lane_position(Position* player);
 };
 
 #endif // TRAFFIC_MANAGER_H

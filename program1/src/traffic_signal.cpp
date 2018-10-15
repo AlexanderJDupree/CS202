@@ -19,6 +19,7 @@ Traffic_Signal::Traffic_Signal(unsigned lane, unsigned distance)
 
 Position& Traffic_Signal::update(const Position* obstacle)
 {
+    // Traffic Signal's position never updates
     if(obstacle)
     {
         return *this;

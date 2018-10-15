@@ -36,6 +36,7 @@ class Player_Vehicle : public Vehicle
 
   private:
 
+    void print_status() const;
     void print_menu() const;
     char get_input(const char* prompt) const;
 

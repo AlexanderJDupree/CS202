@@ -26,22 +26,6 @@ TEST_CASE("Constructing Vehicle Objects", "[vehicle], [constructors]")
     }
 }
 
-TEST_CASE("Determining brake_distance", "[vehicle], [brake_distance]")
-{
-    Vehicle parked;
-
-    Vehicle car(4, 200, 14);
-
-    SECTION("A vehicle at rest")
-    {
-        REQUIRE(parked.brake_distance() == 0);
-    }
-    SECTION("A vehicle travelling 14 m/s")
-    {
-        REQUIRE(car.brake_distance() == 16);
-    }
-}
-
 TEST_CASE("Communicating collision information", "[vehicle]")
 {
 }

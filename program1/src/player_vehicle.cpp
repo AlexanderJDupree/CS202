@@ -19,6 +19,7 @@ Player_Vehicle::Player_Vehicle(const int& lane, const int& distance, const int& 
 
 Position& Player_Vehicle::update(const Position* obstacle)
 {
+    print_status();
     print_menu();
 
     char input = get_input("\n> ");
@@ -27,8 +28,8 @@ Position& Player_Vehicle::update(const Position* obstacle)
     {
         case '2' : accelerate(5); break;
         case '3' : accelerate(-5); break;
-        case '4' : change_lane(_lane - 1); break;
-        case '5' : change_lane(_lane + 1); break;
+        case '4' : change_lane(_lane - 1); return *this; break;
+        case '5' : change_lane(_lane + 1); return *this; break;
         case '6' : accelerate(_velocity * -1); break;
         default : break;
     }
@@ -48,13 +49,16 @@ const char* Player_Vehicle::symbol() const
 
 void Player_Vehicle::change_lane(const int& lane)
 {
-    _lane = lane;
+    if (lane < 4 && lane >= 0)
+    {
+        _lane = lane;
+    }
     return;
 }
 
 void Player_Vehicle::accelerate(const int& delta_velocity)
 {
-    // TODO handle overflow and unrealistic changes
+    // Handle underflow
     if (_velocity + delta_velocity < 0)
     {
         _velocity = 0;
@@ -63,10 +67,17 @@ void Player_Vehicle::accelerate(const int& delta_velocity)
     return;
 }
 
+void Player_Vehicle::print_status() const
+{
+    std::cout << "\nYou are in lane " << _lane + 1 << " travelling at " << _velocity
+              << "m/s.";
+    return;
+}
+
 void Player_Vehicle::print_menu() const
 {
     std::cout << "\n1. Continue\t2. Accelerate\t3. Decelerate"
-              << "\n4. Go Left Lane\t5. Go Right Lane\t6. Stop";
+              << "\n4. Move Left\t5.Move Right\t6. Stop";
     std::cout << std::endl;
     return;
 }

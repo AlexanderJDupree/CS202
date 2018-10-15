@@ -71,8 +71,14 @@ class linear_linked_list
     // Copies the front element onto the out_param and removes it
     reference pop_front(reference out_param);
 
+    // Copies the data onto a node before the insert_point
+    self_type& insert(const_reference data, iterator insert_point);
+
     // Removes each element from the container
     void clear();
+
+    // Removes the element corresponding with the iterator from the list
+    int remove(iterator target);
 
     // Removes the all items fullfilling the predicate functor
     template <class Predicate>
@@ -124,26 +130,32 @@ class linear_linked_list
   private:
     
     /* 
-    @struct: Node
+    @class: Node
 
     @brief: Node is the atomic member for the linked list class. It stores
             the desired data and contains a pointer to the next node in the list.
     */
-    struct Node
+    class Node
     {
-        // Default values are default constrution and NULL
-        Node(const_reference value = value_type(), Node* next = NULL) 
-            : data(value), next(next) {}
+      public:
 
-        value_type data;
-        Node* next;
+        // Default values are default constrution and NULL
+        Node(const_reference value = value_type(), Node* next = NULL);
+
+        Node*& next();
+        reference data();
+
+      private:
+
+        value_type _data;
+        Node* _next;
 
     };
 
     Node* head;
     Node* tail;
 
-    size_type _size; // Keeps track of the number of elements in the list
+    size_type _size; // Tracks the number of elements in the list
 
     /* Recursive Functions */
 
@@ -152,10 +164,25 @@ class linear_linked_list
     template <class Predicate>
     int remove_if(Predicate pred, Node*& current, Node* prev=NULL);
 
+    void insert(const_reference data, Node*& current, Node* target);
+
     /* Subroutines */
 
     // Throws a logic error exception if the node* is NULL
     void throw_if_null(Node* node) const;
+
+    /* Functors */
+    struct remove_functor
+    {
+        remove_functor(const_reference target) : _target(target) {}
+        
+        bool operator()(const_reference data)
+        {
+            return _target == data;
+        }
+
+        value_type _target;
+    };
 
     public:
 
@@ -198,7 +225,11 @@ class linear_linked_list
       
       protected:
 
+        void throw_if_null(Node* node, const char* err) const;
+
         Node* node;
+
+        friend class linear_linked_list<T>;
     };
 
     /*

@@ -84,7 +84,7 @@ linear_linked_list<T>& linear_linked_list<T>::push_back(const_reference data)
 
     Node* temp = new Node(data);
 
-    tail->next = temp;
+    tail->next() = temp;
     tail = temp;
 
     ++_size;
@@ -99,7 +99,7 @@ linear_linked_list<T>& linear_linked_list<T>::pop_front()
         return *this;
     }
 
-    Node* temp = head->next;
+    Node* temp = head->next();
 
     // Edge case, there is only one element in the list
     if (tail == head)
@@ -121,12 +121,50 @@ T& linear_linked_list<T>::pop_front(reference out_param)
 {
     if(!empty())
     {
-        out_param = head->data;
+        out_param = head->data();
 
         pop_front();
     }
         
     return out_param;
+}
+
+template <typename T>
+linear_linked_list<T>& linear_linked_list<T>::insert(const T& data, iterator insert_point)
+{
+    if (head == insert_point.node)
+    {
+        push_front(data);
+    }
+    else
+    {
+        insert(data, head, insert_point.node);
+    }
+    return *this;
+}
+
+template <typename T>
+void linear_linked_list<T>::insert(const T& data, Node*& current, Node* target)
+{
+    if (!current)
+    {
+        return;
+    }
+
+    if (current->next() == target)
+    {
+        Node* temp = new Node(data, target);
+        current->next() = temp;
+        if (tail == current)
+        {
+            tail = temp;
+        }
+    }
+    else
+    {
+        insert(data, current->next(), target);
+    }
+    return;
 }
 
 template <typename T>
@@ -154,7 +192,7 @@ void linear_linked_list<T>::clear_list(Node*& current)
     if (current != tail)
     {
         // Recursive call to travel to the end of the list
-        clear_list(current->next);
+        clear_list(current->next());
     }
 
     // Deletes the current node as the stack unwinds
@@ -177,6 +215,12 @@ int linear_linked_list<T>::remove_if(Predicate pred)
 }
 
 template <typename T>
+int linear_linked_list<T>::remove(iterator target)
+{
+    return remove_if(remove_functor(*target), head);
+}
+
+template <typename T>
 template <class Predicate>
 int linear_linked_list<T>::remove_if(Predicate pred, Node*& current, Node* prev)
 {
@@ -187,7 +231,7 @@ int linear_linked_list<T>::remove_if(Predicate pred, Node*& current, Node* prev)
     }
 
     // Predicate fulfilled, remove this element
-    if(pred(current->data))
+    if(pred(current->data()))
     {
 
         if (tail == current)
@@ -197,7 +241,7 @@ int linear_linked_list<T>::remove_if(Predicate pred, Node*& current, Node* prev)
 
         prev = current;
 
-        current = current->next;
+        current = current->next();
 
         delete prev;
 
@@ -208,7 +252,7 @@ int linear_linked_list<T>::remove_if(Predicate pred, Node*& current, Node* prev)
 
     prev = current;
 
-    return remove_if(pred, current->next, prev);
+    return remove_if(pred, current->next(), prev);
 }
 
 /****** CAPACITY ******/
@@ -236,7 +280,7 @@ T& linear_linked_list<T>::front()
 {
     throw_if_null(head);
 
-    return head->data;
+    return head->data();
 }
 
 template <typename T>
@@ -244,7 +288,7 @@ const T& linear_linked_list<T>::front() const
 {
     throw_if_null(head);
 
-    return head->data;
+    return head->data();
 }
 
 template <typename T>
@@ -252,7 +296,7 @@ T& linear_linked_list<T>::back()
 {
     throw_if_null(tail);
 
-    return tail->data;
+    return tail->data();
 }
 
 template <typename T>
@@ -260,7 +304,7 @@ const T& linear_linked_list<T>::back() const
 {
     throw_if_null(tail);
 
-    return tail->data;
+    return tail->data();
 }
 
 /****** ITERATORS ******/
@@ -361,6 +405,27 @@ void linear_linked_list<T>::throw_if_null(Node* node) const
 }
 
 /*******************************************************************************
+NODE CLASS
+*******************************************************************************/
+
+template <typename T>
+linear_linked_list<T>::Node::Node(const_reference value, Node* next)
+    : _data(value), _next(next) {}
+
+template <typename T>
+typename linear_linked_list<T>::Node*&
+linear_linked_list<T>::Node::next()
+{
+    return _next;
+}
+
+template <typename T>
+T& linear_linked_list<T>::Node::data()
+{
+    return _data;
+}
+
+/*******************************************************************************
 ITERATOR CLASS
 *******************************************************************************/
 
@@ -369,8 +434,10 @@ template <typename T>
 typename linear_linked_list<T>::const_iterator& 
 linear_linked_list<T>::const_iterator::operator++()
 {
+    throw_if_null(node, "Unable to increment null iterator");
+
     // reassign node member to point to the next element in the container
-    node = node->next;
+    node = node->next();
     return *this;
 }
 
@@ -408,28 +475,43 @@ template <typename T>
 typename linear_linked_list<T>::const_reference 
 linear_linked_list<T>::const_iterator::operator*() const
 {
-    return node->data;
+    throw_if_null(node, "Error: dereferenced null iterator");
+    return node->data();
 }
 
 template <typename T>
 typename linear_linked_list<T>::const_pointer
 linear_linked_list<T>::const_iterator::operator->() const
 {
-    return &node->data;
+    throw_if_null(node, "Error: dereferenced null iterator");
+    return &node->data();
 }
 
 template <typename T>
 typename linear_linked_list<T>::reference
 linear_linked_list<T>::iterator::operator*() 
 {
-    return this->node->data;
+    throw_if_null(this->node, "Error: dereferenced null iterator");
+    return this->node->data();
 }
 
 template <typename T>
 typename linear_linked_list<T>::pointer
 linear_linked_list<T>::iterator::operator->()
 {
-    return &this->node->data;
+    throw_if_null(this->node, "Error: dereferenced null iterator");
+    return &this->node->data();
+}
+
+template <typename T>
+void linear_linked_list<T>::const_iterator::throw_if_null(Node* node, const char* err) const
+{
+    if (!node)
+    {
+        throw std::logic_error(err);
+    }
+
+    return;
 }
 
 #endif //LINKED_LIST_CPP

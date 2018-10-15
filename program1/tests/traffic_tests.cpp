@@ -76,6 +76,5 @@ TEST_CASE("Updating vehicle locations and display", "[traffic_manager], [update]
         street.update();
         street.display();
     }
-
 }
 

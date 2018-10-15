@@ -21,8 +21,12 @@ class Position
 
     Position(unsigned lane = 0, unsigned distance = 0);
 
+    virtual ~Position() {};
+
     unsigned lane() const;
     unsigned distance() const;
+
+    void update_collision(const Position* obj);
 
     virtual Position& update(const Position* obstacle)= 0;
 

@@ -29,24 +29,39 @@ Traffic_Matrix::Traffic_Matrix(unsigned lanes, unsigned length)
     }
 }
 
+Traffic_Matrix::~Traffic_Matrix()
+{
+    for (unsigned i = 0; i < MAX_LANES; ++i)
+    {
+        delete [] _matrix[i];
+        _matrix[i] = NULL;
+    }
+    delete [] _matrix;
+    _matrix = NULL;
+}
+
 bool Traffic_Matrix::insert(Position* obj)
 { 
     // Object already located at the position
     if (_matrix[obj->lane()][obj->distance()])
     {
-        // Adjust position based on colliding objects position
-        obj->update(_matrix[obj->lane()][obj->distance()]);
+        return false;
     }
 
     _matrix[obj->lane()][obj->distance()] = obj;
     return true;
 }
 
-bool Traffic_Matrix::update(Position* obj, const Position* obstacle)
+void Traffic_Matrix::update(Position* obj, const Position* obstacle)
 {
     _matrix[obj->lane()][obj->distance()] = NULL;
 
-    return insert(&obj->update(obstacle));
+    if(!insert(&obj->update(obstacle)))
+    {
+        // Adjust position based on colliding objects position
+        obj->update_collision(_matrix[obj->lane()][obj->distance()]);
+        insert(obj);
+    }
 }
 
 void Traffic_Matrix::display() const

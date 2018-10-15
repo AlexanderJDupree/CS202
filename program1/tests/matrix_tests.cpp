@@ -31,16 +31,6 @@ TEST_CASE("Constructing Traffic Matrices", "[traffic_matrix], [constructors]")
 
 TEST_CASE("Populating the traffic matrix with vehicle objects", "[traffic_matrix], [insert]")
 {
-    SECTION("Adding a single vehicle to the matrix")
-    {
-        Traffic_Matrix matrix(3, 100);
 
-        REQUIRE(matrix.insert(new Vehicle(0, 10)));
-        REQUIRE(matrix.insert(new Vehicle(1, 15)));
-        REQUIRE(matrix.insert(new Vehicle(2, 20)));
-        REQUIRE(matrix.insert(new Vehicle(2, 99)));
-
-        matrix.display();
-    }
 }
 
