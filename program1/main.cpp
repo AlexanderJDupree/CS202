@@ -2,6 +2,8 @@
 File: main.cpp
 
 Description: main.cpp acts as the entry point for the program 1 application
+             This file contains methods to clear the screen, print messages,
+             and populate objects with the traffic_manager object.
 
 Author: Alexander DuPree
 
@@ -22,6 +24,8 @@ void run_simulation(Traffic_Manager& street);
 
 void print_message(const char* message);
 
+void clear_screen();
+
 int main()
 {
     Traffic_Manager street(4, 100);
@@ -37,17 +41,15 @@ void populate_street(Traffic_Manager& street)
 {
     street.player_populate(2, 0, 10);
     street.populate(0, 5, 10);
-    //street.populate(0, 0, 14);
     street.populate(1, 7, 8);
-   // street.populate(1, 2, 8);
     street.populate(3, 20, 7);
-    //street.populate(3, 0, 14);
     return;
 }
 
 void run_simulation(Traffic_Manager& street)
 {
     do {
+        clear_screen();
         street.display();
     } while(street.update());
 
@@ -61,6 +63,15 @@ void run_simulation(Traffic_Manager& street)
 void print_message(const char* message)
 {
     std::cout << '\n' << message << std::endl;
+    return;
+}
+
+void clear_screen()
+{
+    for (unsigned i = 0; i < 100; ++i)
+    {
+        std::cout << '\n';
+    }
     return;
 }
 

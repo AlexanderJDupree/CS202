@@ -1,7 +1,9 @@
 /*
 File: traffic_signal.h
 
-Description: 
+Description: Traffic signal class is derived from the Position object. It 
+             currently functions as a stopping point for other position objects
+             in the simulation. 
 
 Author: Alexander DuPree
 

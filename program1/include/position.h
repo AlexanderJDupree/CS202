@@ -1,7 +1,10 @@
 /*
 File: position.h
 
-Description: 
+Description: Position class acts as the abstract base class for the traffic
+             simulation program. The Position abstract class contains virtual 
+             methods for update and symbol and concrete methods for determining
+             the current position of the object.
 
 Author: Alexander DuPree
 
@@ -23,29 +26,26 @@ class Position
 
     virtual ~Position() {};
 
+    // Returns the current lane position
     unsigned lane() const;
+
+    // Returns the current distance travelled
     unsigned distance() const;
 
+    // Updates the position object to handle the collision
     void update_collision(const Position* obj);
 
+    // Pure virtual update. Implemented in derived classes
     virtual Position& update(const Position* obstacle)= 0;
 
+    // Pure virtual symbol. Implemented in derived classes
     virtual const char* symbol() const = 0;
 
   protected:
 
-    unsigned _lane;
-    unsigned _distance;
+    unsigned _lane; // Represents lane position on the street
+    unsigned _distance; // Represents the distance travelled along the street
 
-  private:
-
-};
-
-class Position_Factory
-{
-  public:
-
-    virtual Position* generate() = 0;
 };
 
 #endif // POSITION_H

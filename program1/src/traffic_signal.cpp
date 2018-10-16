@@ -1,7 +1,8 @@
 /*
 File: traffic_signal.cpp
 
-Description: 
+Description: Implementation file for the Traffic Signal class defines the required
+             virtual methods declared in the Position abstract base class.
 
 Author: Alexander DuPree
 

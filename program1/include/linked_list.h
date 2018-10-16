@@ -1,18 +1,27 @@
 /*
- 
- File: linked_list.cpp
+File: linked_list.h
 
- Brief: Header defines protoypes and internal classes for the linear linked list
-        data structure.
+Description: linear_linked_list is a data structure that stores data onto a node
+             as well as the address for the next element in the container.
 
- Copyright (c) 2018 Alexander DuPree
+             This implementation for the linear linked list is a fully templated
+             class. This allows the linear_linked_list to be instantiated to 
+             store any data types. 
 
- This software is released as open source through the MIT License
+             To access data or traverse the list, this linear linked list makes 
+             use of forward iterators. The forward iterator cannot be decremented.
+             The end iterator represents the element one-past the end of the
+             list which is a null pointer. dereferencing end iterators causes 
+             undifined behavior.
 
- Authors: Alexander DuPree
 
- https://github.com/AlexanderJDupree/LinkedListsCPP
+Author: Alexander DuPree
 
+Class: CS202
+
+Assignment: program 1
+
+Date: 09/28/2018
 */
 
 #ifndef LINKED_LIST_H
@@ -229,7 +238,6 @@ class linear_linked_list
 
         Node* node;
 
-        friend class linear_linked_list<T>;
     };
 
     /*

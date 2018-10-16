@@ -1,7 +1,8 @@
 /*
 File: vehicle.cpp
 
-Description: 
+Description: Implementation file for the Vehicle class. Defines the pure virtual
+             methods declared in the abstract base Position class. 
 
 Author: Alexander DuPree
 

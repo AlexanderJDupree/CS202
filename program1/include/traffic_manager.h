@@ -1,7 +1,12 @@
 /*
 File: traffic_manager.h
 
-Description: 
+Description: Traffic Manager acts as the overseer for all position objects in 
+             the system. At its is an array of linear linked list where each
+             index in the array contains a linear linked list of vehicles in 
+             that lane. Complementing this data structure is the traffic_matrix
+             class which helps display and manage position updates of each 
+             position object in the system. 
 
 Author: Alexander DuPree
 
@@ -15,7 +20,6 @@ Date: 09/28/2018
 #ifndef TRAFFIC_MANAGER_H
 #define TRAFFIC_MANAGER_H
 
-#include "position.h"
 #include "linked_list.h"
 #include "player_vehicle.h"
 #include "traffic_signal.h"
@@ -44,6 +48,7 @@ class Traffic_Manager
     // Instantiates a vehicle at the specified location
     bool populate(unsigned lane, unsigned distance, unsigned velocity=0);
 
+    // Instantiates a player vehicle object at the specified location
     bool player_populate(unsigned lane, unsigned distance, unsigned velocity);
 
     // Updates each vehicles position in the matrix
@@ -52,19 +57,17 @@ class Traffic_Manager
     // Displays the graphical representation of the street
     void display() const;
 
-  protected:
-
   private:
 
     const unsigned MAX_LANES;
     const unsigned MAX_LENGTH;
     
+    // Array of linear linked list, each index represents a lane in the road
     lane* _lanes;
 
+    // Traffic Matrix object is used for display and update methods
     Traffic_Matrix _matrix;
 
-    // Updates the player's vehicle to be inserted into the correct lane
-    void update_lane_position(Position* player);
 };
 
 #endif // TRAFFIC_MANAGER_H

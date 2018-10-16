@@ -1,17 +1,13 @@
 /*
- 
- File: linked_list.cpp
+File: linked_list.h
 
- Brief: Implementation file for the linear_linked_list data structure
+Author: Alexander DuPree
 
- Copyright (c) 2018 Alexander DuPree
+Class: CS202
 
- This software is released as open source through the MIT License
+Assignment: program 1
 
- Authors: Alexander DuPree
-
- https://github.com/AlexanderJDupree/LinkedListsCPP
-
+Date: 09/28/2018
 */
 
 #ifndef LINKED_LIST_CPP

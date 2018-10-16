@@ -1,7 +1,8 @@
 /*
 File: traffic_manager.h
 
-Description: 
+Description: Implementation file for the traffic_manager class. Defines methods
+             for construction, destruction, and public/private methods of use.
 
 Author: Alexander DuPree
 
@@ -27,14 +28,18 @@ Traffic_Manager::Traffic_Manager(unsigned lanes, unsigned length)
 
 Traffic_Manager::~Traffic_Manager()
 {
+    // Loop through each index in the array of linked list
     for (unsigned i = 0; i < MAX_LANES; ++i)
     {
+        // Loop through each vehicle in a lane
         for (lane::iterator it = _lanes[i].begin(); !it.null(); ++it)
         {
+            // Delete the dynamically allocated position object
             delete *it;
             *it = NULL;
         }
     }
+
     delete [] _lanes;
     _lanes = NULL;
 }
@@ -76,6 +81,8 @@ bool Traffic_Manager::populate(unsigned lane, unsigned distance, unsigned veloci
     return _matrix.insert(*_lanes[lane].begin());
 }
 
+// TODO look into creating abstract factories to instantiate derived objects,
+// player_populate and populate contain the same code. 
 bool Traffic_Manager::player_populate(unsigned lane, unsigned distance, unsigned velocity)
 {
     if (lane >= MAX_LANES || distance >= MAX_LENGTH)
@@ -90,13 +97,18 @@ bool Traffic_Manager::player_populate(unsigned lane, unsigned distance, unsigned
 
 bool Traffic_Manager::update()
 {
+    // Returns to the client whether or not the simulation has ended
     bool again = true;
+
+    // Loops through each position object and tells it to update its position
     for (unsigned i = 0; i < MAX_LANES; ++i)
     {
         for (lane::iterator it = _lanes[i].begin(); !it.null(); ++it)
         {
             lane::iterator iter = it;
 
+            // iter points to the next object in the lane, i.e. the obstacle 
+            // required for position objects update methods
             if ((++iter).null())
             {
                 _matrix.update(*it, NULL);
@@ -109,15 +121,6 @@ bool Traffic_Manager::update()
             if (dynamic_cast<Player_Vehicle*>(*it))
             {
                 again = (*it)->distance() < MAX_LENGTH - 3;
-
-                /*
-                // Player changed lanes
-                if ((*it)->lane() != i)
-                {
-                    update_lane_position(*it);
-                    _lanes[i].remove(it);
-                }
-                */
             }
         }
     }
@@ -128,16 +131,5 @@ void Traffic_Manager::display() const
 {
     _matrix.display();
     return;
-}
-
-void Traffic_Manager::update_lane_position(Position* player)
-{
-    for (lane::iterator it = _lanes[player->lane()].begin(); !it.null(); ++it)
-    {
-        if((*it)->distance() > player->distance())
-        {
-            _lanes[player->lane()].insert(player, it);
-        }
-    }
 }
 

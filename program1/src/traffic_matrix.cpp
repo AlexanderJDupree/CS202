@@ -1,7 +1,10 @@
 /*
-File: traffic_matrix.h
+File: traffic_matrix.cpp
 
-Description: 
+Description: Implementation file for the Traffic_Matrix class, defines methods 
+             for construction and destruction of the traffic matrix as well as
+             methods for insertion and updates of position objects located in 
+             the matrix.
 
 Author: Alexander DuPree
 
@@ -31,6 +34,8 @@ Traffic_Matrix::Traffic_Matrix(unsigned lanes, unsigned length)
 
 Traffic_Matrix::~Traffic_Matrix()
 {
+    // Deletes the allocated array, DOES NOT delete the allocated position 
+    // objects, only their pointers
     for (unsigned i = 0; i < MAX_LANES; ++i)
     {
         delete [] _matrix[i];
@@ -54,6 +59,7 @@ bool Traffic_Matrix::insert(Position* obj)
 
 void Traffic_Matrix::update(Position* obj, const Position* obstacle)
 {
+    // Clear the old position
     _matrix[obj->lane()][obj->distance()] = NULL;
 
     if(!insert(&obj->update(obstacle)))
