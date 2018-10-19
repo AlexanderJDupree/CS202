@@ -1,7 +1,8 @@
 /*
 File: player_vehicle.cpp
 
-Description: 
+Description: Implementation file for the Player Vehicle class, defines methods 
+             construction and reading/evaluating user input. 
 
 Author: Alexander DuPree
 

@@ -1,7 +1,8 @@
 /*
 File: position.cpp
 
-Description: 
+Description: Implementation file for the Position abstract base class. Defines
+             basic methods for construction and location information. 
 
 Author: Alexander DuPree
 
