@@ -14,7 +14,7 @@ Date: 10/23/2018
 
 #include "scooter.h"
 
-Scooter::Scooter(int id, int miles, Location loc, int charge)
+Scooter::Scooter(int id, int miles, int charge, Location loc)
     : Rental_Transport(id, miles, loc), battery(charge) {}
 
 void Scooter::display() const
@@ -25,9 +25,14 @@ void Scooter::display() const
               << std::endl;;
 }
 
-int Scooter::rate() const
+float Scooter::rate() const
 {
-    return 2;
+    return .80;
+}
+
+float Scooter::earnings() const
+{
+    return rate() * miles;
 }
 
 int Scooter::battery_level() const

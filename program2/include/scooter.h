@@ -21,11 +21,13 @@ class Scooter : public Rental_Transport
 {
   public:
 
-    Scooter(int id = 0, int miles = 0, Location loc = Location(), int charge = 0);
+    Scooter(int id = 0, int miles = 0, int charge = 0, Location loc = Location());
 
     void display() const; // Override
 
-    int rate() const; // Override
+    float rate() const; // Override
+
+    float earnings() const; // Override
 
     int battery_level() const;
 

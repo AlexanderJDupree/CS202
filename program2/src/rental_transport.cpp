@@ -25,7 +25,8 @@ const int& Rental_Transport::total_miles() const
 void Rental_Transport::display() const
 {
     std::cout << std::string(50, '=') << "\nID Number: " << id_number 
-              << "\nMileage: " << miles << "\nLocation: " << location << '\n';
+              << "\nMileage: " << miles << "\nEarnings: $" << earnings()
+              << "\nLocation: " << location << '\n';
               
 }
 

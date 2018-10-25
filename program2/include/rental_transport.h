@@ -33,7 +33,10 @@ class Rental_Transport
     virtual void display() const;
 
     // Returns the hourly (or per mile) rate for the transport
-    virtual int rate() const = 0;
+    virtual float rate() const = 0;
+
+    // Returns the total earnings of the transport
+    virtual float earnings() const = 0;
 
   protected:
 
@@ -42,18 +45,6 @@ class Rental_Transport
     int miles; // The current mileage of the transport
 
     Location location; // Current intersection where transport is located
-
-  private:
-
-};
-
-class Rental_Transport_Factory
-{
-  public:
-
-      virtual Rental_Transport* create() const = 0;
-
-  protected:
 
   private:
 

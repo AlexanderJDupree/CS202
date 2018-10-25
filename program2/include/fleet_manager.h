@@ -16,7 +16,7 @@ Date: 10/23/2018
 #define FLEET_MANAGER_H
 
 #include "double_list.h"
-#include "rental_transport.h"
+#include "rental_factory.h"
 
 class Fleet_Manager
 {
@@ -27,6 +27,12 @@ class Fleet_Manager
     Fleet_Manager();
 
     ~Fleet_Manager();
+
+    int size() const;
+
+    void add_vehicle(Rental_Transport_Factory* factory);
+
+    void display_earnings() const;
 
   protected:
 
