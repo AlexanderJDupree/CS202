@@ -80,14 +80,23 @@ class double_linked_list
     // Copies the front element onto the out_param and removes it
     reference pop_front(reference out_param);
 
+    // Removes the element at the rear of the list
+    self_type& pop_back();
+
+    // Copies the rear element onto the out_param and removes it
+    reference pop_back(reference out_param);
+
     // Copies the data onto a node before the insert_point
     self_type& insert(const_reference data, iterator insert_point);
 
     // Removes each element from the container
     void clear();
 
+    // Copies the contents of the original list
+    int copy(const self_type& origin);
+
     // Removes the element corresponding with the iterator from the list
-    int remove(iterator target);
+    iterator& remove(iterator& target);
 
     // Removes elements matching target value
     int remove(const_reference target);
@@ -162,8 +171,13 @@ class double_linked_list
              Node* next = NULL, Node* prev = NULL);
 
         Node*& next();
+        const Node* next() const;
+
         Node*& prev();
+        const Node* prev() const;
+
         reference data();
+        const_reference data() const;
 
       private:
 
@@ -184,6 +198,8 @@ class double_linked_list
 
     template <class Predicate>
     int remove_if(Predicate pred, Node*& current);
+
+    int copy(Node*& dest, const Node* source, Node* prev = NULL);
 
     /* Subroutines */
 

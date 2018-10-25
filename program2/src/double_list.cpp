@@ -39,12 +39,7 @@ template <typename T>
 double_linked_list<T>::double_linked_list(const self_type& origin) 
     : head(NULL), tail(NULL), _size(0)
 {
-    // TODO refactor to exclude iterators
-    const_iterator it;
-    for (it = origin.begin(); it != origin.end(); ++it)
-    {
-        push_back(*it);
-    }
+    _size = copy(head, origin.head);
 }
 
 // Destructor
@@ -132,6 +127,44 @@ T& double_linked_list<T>::pop_front(reference out_param)
 }
 
 template <typename T>
+double_linked_list<T>& double_linked_list<T>::pop_back()
+{
+    if (!empty())
+    {
+        // Edge case : one element in list
+        if (head == tail)
+        {
+            head = NULL;
+        }
+
+        Node * temp = tail;
+
+        tail = tail->prev();
+
+        delete temp;
+
+        tail->next() = NULL;
+
+        --_size;
+    }
+
+    return *this;
+}
+
+template <typename T>
+T& double_linked_list<T>::pop_back(reference out_param)
+{
+    if(!empty())
+    {
+        out_param = tail->data();
+
+        pop_back();
+    }
+        
+    return out_param;
+}
+
+template <typename T>
 double_linked_list<T>& double_linked_list<T>::insert(const T& data, iterator insert_point)
 {
     if (head == insert_point.node)
@@ -146,6 +179,31 @@ double_linked_list<T>& double_linked_list<T>::insert(const T& data, iterator ins
         ++_size;
     }
     return *this;
+}
+
+template <typename T>
+int double_linked_list<T>::copy(const self_type& origin)
+{
+    if (!empty())
+    {
+        clear();
+    }
+
+    return (_size = copy(head, origin.head));
+}
+
+template <typename T>
+int double_linked_list<T>::copy(Node*& dest, const Node* source, Node* prev)
+{
+    if (!source)
+    {
+        tail = prev;
+        return 0;
+    }
+
+    dest = new Node(source->data(), NULL, prev);
+
+    return 1 + copy(dest->next(), source->next(), dest);
 }
 
 template <typename T>
@@ -196,9 +254,21 @@ int double_linked_list<T>::remove_if(Predicate pred)
 }
 
 template <typename T>
-int double_linked_list<T>::remove(iterator target)
+typename double_linked_list<T>::iterator& 
+double_linked_list<T>::remove(iterator& target)
 {
-    return remove_if(remove_functor(*target), head);
+    target.throw_if_null(target.node, "Unable to dereference null iterator");
+
+    target.node->prev()->next() = target.node->next();
+    target.node->next()->prev() = target.node->prev();
+
+    Node* temp = target.node;
+
+    target.node = target.node->next();
+
+    delete temp;
+
+    return target;
 }
 
 template <typename T>
@@ -310,6 +380,20 @@ double_linked_list<T>::begin() const
 
 template <typename T>
 typename double_linked_list<T>::iterator
+double_linked_list<T>::rbegin()
+{
+    return iterator(tail);
+}
+
+template <typename T>
+typename double_linked_list<T>::const_iterator 
+double_linked_list<T>::rbegin() const
+{
+    return const_iterator(tail);
+}
+
+template <typename T>
+typename double_linked_list<T>::iterator
 double_linked_list<T>::end()
 {
     return iterator(NULL);
@@ -321,6 +405,21 @@ double_linked_list<T>::end() const
 {
     return const_iterator(NULL);
 }
+
+template <typename T>
+typename double_linked_list<T>::iterator
+double_linked_list<T>::rend()
+{
+    return iterator(NULL);
+}
+
+template <typename T>
+typename double_linked_list<T>::const_iterator 
+double_linked_list<T>::rend() const
+{
+    return const_iterator(NULL);
+}
+
 
 /****** COMPARISON OPERATORS ******/
 
@@ -405,6 +504,13 @@ double_linked_list<T>::Node::next()
 }
 
 template <typename T>
+const typename double_linked_list<T>::Node*
+double_linked_list<T>::Node::next() const
+{
+    return _next;
+}
+
+template <typename T>
 typename double_linked_list<T>::Node*&
 double_linked_list<T>::Node::prev()
 {
@@ -412,7 +518,21 @@ double_linked_list<T>::Node::prev()
 }
 
 template <typename T>
+const typename double_linked_list<T>::Node*
+double_linked_list<T>::Node::prev() const
+{
+    return _prev;
+}
+
+
+template <typename T>
 T& double_linked_list<T>::Node::data()
+{
+    return _data;
+}
+
+template <typename T>
+const T& double_linked_list<T>::Node::data() const
 {
     return _data;
 }
@@ -440,6 +560,27 @@ double_linked_list<T>::const_iterator::operator++(int)
     // Create a copy to satisfy postfix incrementation requirements
     self_type copy = self_type(*this);
     ++(*this);
+    return copy;
+}
+
+template <typename T>
+typename double_linked_list<T>::const_iterator& 
+double_linked_list<T>::const_iterator::operator--()
+{
+    throw_if_null(node, "Unable to decrement null iterator");
+
+    // reassign node member to point to the next element in the container
+    node = node->prev();
+    return *this;
+}
+
+template <typename T>
+typename double_linked_list<T>::const_iterator
+double_linked_list<T>::const_iterator::operator--(int)
+{
+    // Create a copy to satisfy postfix incrementation requirements
+    self_type copy = self_type(*this);
+    --(*this);
     return copy;
 }
 

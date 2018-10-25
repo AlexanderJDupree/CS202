@@ -1,17 +1,5 @@
 /*
  
- File: double_list_test.cpp
-
- Brief: Unit tests for linear linked list data structure
-
- Copyright (c) 2018 Alexander DuPree
-
- This software is released as open source through the MIT License
-
- Authors: Alexander DuPree, Jacob Bickle
-
- https://github.com/AlexanderJDupree/LinkedListsCPP
-
 */
 
 #include <catch.hpp>
@@ -217,8 +205,36 @@ TEST_CASE("Popping the front element off the list", "[double_list], [operations]
     }
 }
 
+TEST_CASE("Popping the rear element from the list")
+{
+    int nums[] = { 1, 2, 3, 4 };
+    double_linked_list<int> list(nums, nums + 4);
 
-// TODO Ensure the list is still linked in reverse
+    double_linked_list<int> empty;
+
+    SECTION("Pop back on an empty list")
+    {
+        REQUIRE(empty.pop_back().empty());
+    }
+    SECTION("Pop the back of a populated list")
+    {
+        REQUIRE(list.pop_back().size() == 3);
+
+        int i = 4;
+        double_linked_list<int>::const_iterator it;
+        for (it = list.rbegin(); it != list.rend(); --it)
+        {
+            REQUIRE(*it == --i);
+        }
+    }
+    SECTION("Pop the back of an populated list with an out param")
+    {
+        int i = 7;
+
+        REQUIRE(list.pop_back(i) == 4);
+    }
+}
+
 TEST_CASE("Removing a specific element from a list", "[double_list], [operations], [remove]")
 {
     int nums[] = { 1, 4, 2, 3, 4 };
@@ -236,13 +252,22 @@ TEST_CASE("Removing a specific element from a list", "[double_list], [operations
             REQUIRE(*it == --i);
         }
     }
-
     SECTION("Removing an item not found in a list")
     {
         REQUIRE(list.remove(7) == 0);
     }
+    SECTION("Removing elements with an iterator")
+    {
+        double_linked_list<int>::iterator it;
+        for (it = list.begin(); it != list.end(); ++it)
+        {
+            if (*it == 3)
+            {
+                REQUIRE(*(list.remove(it)) == 4);
+            }
+        }
+    }
 }
-
 
 struct remove_seven
 {
@@ -264,11 +289,11 @@ TEST_CASE("Using functors to remove a specific element", "[double_list], [operat
 
         REQUIRE(list.remove_if(functor) == 3);
 
-        int i = 0;
+        int i = 7;
         double_linked_list<int>::const_iterator it;
-        for (it = list.begin(); it != list.end(); ++it)
+        for (it = list.rbegin(); it != list.end(); --it)
         {
-            REQUIRE(*it == ++i);
+            REQUIRE(*it == --i);
         }
     }
     SECTION("remove_if with the element as the head")
