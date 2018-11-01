@@ -17,6 +17,15 @@ Date: 10/23/2018
 
 #include "location.h"
 
+struct service_status
+{
+    service_status(const char* status, bool in_service)
+        : status(status), in_service(in_service) {}
+
+    const char* status;
+    bool in_service;
+};
+
 class Rental_Transport
 {
   public:
@@ -31,6 +40,9 @@ class Rental_Transport
 
     // Displays the status of the vehicle
     virtual void display() const;
+    
+    // Returns true if the unit is in service
+    virtual service_status status() const;
 
     // Returns the hourly (or per mile) rate for the transport
     virtual float rate() const = 0;

@@ -15,19 +15,30 @@ Date: 10/23/2018
 #ifndef RENTAL_FACTORY
 #define RENTAL_FACTORY
 
+#include "bicycle.h"
+#include "zip_car.h"
 #include "scooter.h"
 
 class Rental_Transport_Factory
 {
   public:
 
-      virtual Rental_Transport* create() const = 0;
+      Rental_Transport_Factory();
 
-      virtual ~Rental_Transport_Factory() {}
+      virtual ~Rental_Transport_Factory();
+
+      virtual Rental_Transport* create() const = 0;
 
   protected:
 
-  private:
+      Location* loc;
+
+      int* base_attributes;
+
+      Location* get_location() const;
+
+      int* get_base_attributes() const;
+
 
 };
 
@@ -36,10 +47,20 @@ class Scooter_Factory : public Rental_Transport_Factory
   public:
 
     Rental_Transport* create() const;
+};
 
-  protected:
+class Zip_Car_Factory : public Rental_Transport_Factory
+{
+  public:
 
-  private:
+    Rental_Transport* create() const;
+};
+
+class Bicycle_Factory : public Rental_Transport_Factory
+{
+  public:
+    
+    Rental_Transport* create() const;
 };
 
 #endif // RENTAL_FACTORY

@@ -22,7 +22,18 @@ void Scooter::display() const
     std::cout << "\nElectric Scooter\n";
     Rental_Transport::display();
     std::cout << "Battery Level: " << battery << "%\n" << std::string(50, '=') 
-              << std::endl;;
+              << std::endl;
+    return;
+}
+
+service_status Scooter::status() const
+{
+    if (battery <= 25)
+    {
+        return service_status("Battery less than 25%, charge now", false);
+    }
+
+    return service_status("In Service", true);
 }
 
 float Scooter::rate() const

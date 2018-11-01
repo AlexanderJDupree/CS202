@@ -259,15 +259,28 @@ double_linked_list<T>::remove(iterator& target)
 {
     target.throw_if_null(target.node, "Unable to dereference null iterator");
 
-    target.node->prev()->next() = target.node->next();
-    target.node->next()->prev() = target.node->prev();
+    if (target.node == head)
+    {
+        ++target;
+        pop_front();
+    }
+    else if (target.node == tail)
+    {
+        --target;
+        pop_back();
+    }
+    else
+    {
+        target.node->prev()->next() = target.node->next();
+        target.node->next()->prev() = target.node->prev();
 
-    Node* temp = target.node;
+        Node* temp = target.node;
 
-    target.node = target.node->next();
+        target.node = target.node->next();
 
-    delete temp;
-
+        delete temp;
+    }
+    
     return target;
 }
 

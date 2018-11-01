@@ -18,17 +18,13 @@ Date: 10/23/2018
 #include "double_list.h"
 #include "rental_factory.h"
 
-class Fleet_Manager
+class Fleet_Manager : public double_linked_list<Rental_Transport*>
 {
   public:
-
-    typedef double_linked_list<Rental_Transport*> Fleet;
 
     Fleet_Manager();
 
     ~Fleet_Manager();
-
-    int size() const;
 
     void add_vehicle(Rental_Transport_Factory* factory);
 
@@ -38,7 +34,6 @@ class Fleet_Manager
 
   private:
 
-    Fleet fleet;
 };
 
 #endif // FLEET_MANAGER_H

@@ -25,6 +25,8 @@ class Scooter : public Rental_Transport
 
     void display() const; // Override
 
+    service_status status() const;
+
     float rate() const; // Override
 
     float earnings() const; // Override

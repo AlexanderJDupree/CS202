@@ -26,7 +26,18 @@ void Rental_Transport::display() const
 {
     std::cout << std::string(50, '=') << "\nID Number: " << id_number 
               << "\nMileage: " << miles << "\nEarnings: $" << earnings()
-              << "\nLocation: " << location << '\n';
-              
+              << "\nLocation: " << location << "\nService Status: " 
+              << "\n\t" << status().status << '\n';
+    return;
+}
+
+service_status Rental_Transport::status() const
+{
+    if (miles > 10000)
+    {
+        return service_status("In need of 10k Mile Service", false);
+    }
+    
+    return service_status("In Service", true);
 }
 

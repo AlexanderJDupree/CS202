@@ -64,7 +64,7 @@ class double_linked_list
     double_linked_list(const self_type& origin);
    
     // Destructor
-    ~double_linked_list();
+    virtual ~double_linked_list();
      
     /****** MODIFIERS ******/
 
@@ -154,7 +154,7 @@ class double_linked_list
     // ownership.
     static void swap(self_type& new_list, self_type& old_list);
 
-  private:
+  protected:
     
     /* 
     @class: Node

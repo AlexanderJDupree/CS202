@@ -14,35 +14,33 @@ Date: 10/23/2018
 
 #include "fleet_manager.h"
 
-Fleet_Manager::Fleet_Manager() {}
+Fleet_Manager::Fleet_Manager()
+    : double_linked_list<Rental_Transport*>() {}
 
 Fleet_Manager::~Fleet_Manager()
 {
-    for (Fleet::iterator it = fleet.begin(); it != fleet.end(); ++it)
+    Node* temp = head;
+    while (temp)
     {
-        delete *it;
+        delete temp->data();
+        temp = temp->next();
     }
-}
-
-int Fleet_Manager::size() const
-{
-    return fleet.size();
 }
 
 void Fleet_Manager::add_vehicle(Rental_Transport_Factory* factory)
 {
-    fleet.push_back(factory->create());
+    push_back(factory->create());
 }
 
 void Fleet_Manager::display_earnings() const
 {   
-    Fleet::const_iterator min = fleet.begin();
-    Fleet::const_iterator max = fleet.begin();
+    const_iterator min = begin();
+    const_iterator max = begin();
 
     float total = 0.0;
     float average = 0.0;
 
-    for (Fleet::const_iterator it = fleet.begin(); it != fleet.end(); ++it)
+    for (const_iterator it = begin(); it != end(); ++it)
     {
         total += (*it)->earnings(); 
 
@@ -63,7 +61,7 @@ void Fleet_Manager::display_earnings() const
         std:: cout << "\n\nHighest Earner: $" << (*max)->earnings();
         (*max)->display();
 
-        average = total / fleet.size();
+        average = total / _size;
     }
 
     std::cout << "\nTotal Earnings: $" << total;
