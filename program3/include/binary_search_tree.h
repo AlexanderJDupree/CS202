@@ -22,6 +22,7 @@ Date: 07/24/2018
 #include <cstddef> // NULL
 #include <algorithm> // std::max
 #include <stdexcept> // std::logic_error
+#include "circular_list.h" 
 
 template<class K, class V>
 class binary_tree
@@ -33,11 +34,12 @@ class binary_tree
     class forward_iterator;
     class const_forward_iterator;
 
-    typedef K                      key_type;
-    typedef V                      value_type;
-    typedef binary_tree            self_type;
-    typedef forward_iterator       iterator;
-    typedef const_forward_iterator const_iterator;
+    typedef K                             key_type;
+    typedef V                             value_type;
+    typedef binary_tree                   self_type;
+    typedef circular_linked_list<b_node*> queue;
+    typedef forward_iterator              iterator;
+    typedef const_forward_iterator        const_iterator;
     
     /****** CONSTRUCTORS ******/
 
@@ -158,6 +160,10 @@ class binary_tree
     unsigned _size; // The number of elements in the tree
     b_node* _root; // Root node
     value_type _default_object; // Default object is return on failed searches
+
+    queue _traversal_queue; // Stores the inorder traversal state into a queue, 
+                            // The iteratros utilize the queue to traverse to the
+                            // correct node
 
     /****** SUBROUTINES ******/
 

@@ -18,71 +18,18 @@ Author: Alexander DuPree
 
 Class: CS163
 
-Assignment: program 3
+Assignment: program 4
 
-Date: 11/01/2018
+Date: 07/11/2018
 */
 
 #ifndef STRING_H
 #define STRING_H
 
-#include <cstddef> 
 #include <cstring>
 #include <iostream>
 #include <stdexcept> 
-
-/*
-Class: reference_manager
-
-Brief: The Reference Count Manager is an idea I have been playing around with 
-       for adding garbage collection to C++ programs. This is my first attempt 
-       in implementing garbage collection and as such, the reference_manager is 
-       only in its first stages of development. 
-
-Author: Alexander DuPree
-*/
-
-template <typename T> 
-class reference_manager
-{
-  public:
-    
-    typedef T                   value_type;
-    typedef T&                  reference; 
-    typedef T*                  pointer;
-    typedef const T&            const_reference;
-    typedef const T*            const_pointer;
-    typedef reference_manager   self_type;
-    typedef unsigned            size_type;
-
-    // Allocates a T array of a defined size
-    reference_manager(size_type size = 0);
-
-    // Points this object to the origin data, increments reference count
-    reference_manager(const self_type& origin);
-
-    // Decrements the reference count, if the reference count is zero, releases
-    // the data
-    virtual ~reference_manager();
-
-    // Returns the number of elements in the array
-    size_type size() const;
-
-    // Returns the number of references to the array
-    size_type ref_count() const;
-
-  protected:
-
-    size_type* _size; // The shared size of the allocated data
-    size_type* _ref_count; // The number of references to the data
-    pointer   _data; // The shared data object
-
-  private:
-
-    // Releases the data. This will delete the data, ref count and size for ALL
-    // referenced objects
-    void release();
-};
+#include "rc_manager.h"
 
 // SString inherits the functionality of the reference manager to allow for 
 // smart allocation, copy, and deallocation
@@ -129,10 +76,10 @@ class SString : public reference_manager<char>
 
     /****** OPERATIONS ******/
     
-    // Returns a COPY of the string from [begin:end]
+    // Returns a copy of the string from [begin:end]
     self_type substring(unsigned begin=0, unsigned end=0) const;
 
-    // Returns a substring COPY of the string from (0, width)
+    // Returns a substring of the string from (0, width)
     self_type truncate(unsigned width = 8) const;
 
     /****** ITERATORS ******/
@@ -217,8 +164,5 @@ struct invalid_substring : public std::exception
         return _error;
     }
 };
-
-#include "sstring.cpp"
-
 #endif // STRING_H
 
