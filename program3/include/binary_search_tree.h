@@ -9,11 +9,11 @@ Brief: Binary search tree is a tree based data strucutre. This implementation of
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 4
+Assignment: program 3
 
-Date: 07/24/2018
+Date: 11/03/2018
 */
 
 #ifndef BINARY_TREE_H
@@ -27,7 +27,9 @@ Date: 07/24/2018
 template<class K, class V>
 class binary_tree
 {
-    class b_node;
+  protected:
+
+    class b_node; // Forward Declaration
 
   public:
 
@@ -54,7 +56,7 @@ class binary_tree
     // Copy Constructor
     binary_tree(const self_type& origin);
 
-    ~binary_tree();
+    virtual ~binary_tree();
 
     /****** MODIFIERS ******/
 
@@ -130,7 +132,7 @@ class binary_tree
     bool operator == (const self_type& rhs) const;
     bool operator != (const self_type& rhs) const;
 
-  private:
+  protected:
 
     class b_node
     {

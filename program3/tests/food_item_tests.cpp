@@ -20,14 +20,18 @@ class Food_Test_Fixture : public Food_Item
   public:
 
       Food_Test_Fixture(const char* name = "N/A", int cal = 0, bool vegan = 0,
-                        bool gluten = 0, bool nuts = 0)
-          : Food_Item(name, cal, vegan, gluten, nuts) {}
+                        bool gluten = 0, bool nuts = 0, int test = 0)
+          : Food_Item(name, cal, vegan, gluten, nuts), test(test) {}
+
+      Food_Test_Fixture(const Food_Test_Fixture& origin)
+          : Food_Item(origin), test(origin.test) {}
 
       std::ostream& display(std::ostream& os) const
       {
-          return Food_Item::display(os) << "\nTEST FIXTURE";
+          return Food_Item::display(os) << "\nTEST FIXTURE: " << test;
       }
-
+      
+      int test;
 };
 
 std::string toString(const Food_Test_Fixture& item)
@@ -38,7 +42,8 @@ std::string toString(const Food_Test_Fixture& item)
 
     return oss.str();
 }
-TEST_CASE("Constructiong derived Food_Item objects")
+
+TEST_CASE("Constructiong derived Food_Item objects", "[Food_Item], [constructors]")
 {
     SECTION("Default Construction")
     {
@@ -51,7 +56,7 @@ TEST_CASE("Constructiong derived Food_Item objects")
                 "\nVegan: 0"
                 "\nGluten Free: 0"
                 "\nNuts: 0"
-                "\nTEST FIXTURE");
+                "\nTEST FIXTURE: 0");
     }
     SECTION("Explicit Construction")
     {
@@ -64,7 +69,27 @@ TEST_CASE("Constructiong derived Food_Item objects")
                 "\nVegan: 1"
                 "\nGluten Free: 1"
                 "\nNuts: 1"
-                "\nTEST FIXTURE");
+                "\nTEST FIXTURE: 0");
+    }
+    SECTION("Copy Construction")
+    {
+        Food_Test_Fixture origin("Food", 100, 1, 1, 1, 7);
+        Food_Test_Fixture copy(origin);
+
+        REQUIRE(origin == copy);
+    }
+}
+
+TEST_CASE("Comparing Food_Item objects", "[Food_Item], [Equality]")
+{
+    SECTION("Food_Items with differing caloric values")
+    {
+        Food_Test_Fixture lhs("Food", 100, 1, 1, 1, 7);
+        Food_Test_Fixture rhs("Food2", 300, 1, 1, 1, 7);
+
+        REQUIRE(lhs < rhs);
+        REQUIRE(rhs > lhs);
+        REQUIRE(lhs != rhs);
     }
 }
 
