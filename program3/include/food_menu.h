@@ -25,7 +25,9 @@ class Food_Menu : public binary_tree<int, Food_Item*>
     ~Food_Menu();
 
     // Adds a new food_item object to the menu
-    void add_item(const Food_Item_Factory* factory);
+    Food_Menu& add_item(const Food_Item_Factory* factory);
+
+    Food_Menu& operator += (const Food_Item_Factory* factory);
 
   private:
 

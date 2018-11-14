@@ -8,11 +8,11 @@ Brief: circular_linked_list is a data structure that stores data onto a node as
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 2
+Assignment: program 3
 
-Date: 07/24/2018
+Date: 11/01/2018
 */
 
 #ifndef CIRCULAR_LIST_H

@@ -1,7 +1,8 @@
 /*
 File: food_item.cpp
 
-Brief: 
+Brief: Implementation file for the Food Item base class and all of its 
+       derivitives and factory classes.
 
 Author: Alexander DuPree
 
@@ -31,6 +32,11 @@ void Food_Item::display() const
     std::cout << *this;
 }
 
+const SString& Food_Item::dish_name() const
+{
+    return name;
+}
+
 int Food_Item::total_calories() const
 {
     return calories;
@@ -39,9 +45,18 @@ int Food_Item::total_calories() const
 std::ostream& Food_Item::display(std::ostream& os)  const
 {
     os << '\n' << name << '\n' << SString(50, '=') << "\nCalories: " << calories
-       << "\nVegan: " << vegan << "\nGluten Free: " << gluten_free << "\nNuts: "
-       << contains_nuts;
+       << "\nVegan: " << print_status(vegan) << "\nGluten Free: " 
+       << print_status(gluten_free) << "\nNuts: " << print_status(contains_nuts);
     return os;
+}
+
+const char* Food_Item::print_status(bool flag) const
+{
+    if (flag)
+    {
+        return "Yes";
+    }
+    return "No";
 }
 
 bool Food_Item::operator==(const Food_Item& rhs) const
@@ -89,7 +104,7 @@ Entree::Entree(const Entree& origin)
 std::ostream& Entree::display(std::ostream& os) const
 {
     return Food_Item::display(os) << "\nProteins: " << proteins << "\nCarbs: " 
-                                  << carbs << SString(50, '=');
+                                  << carbs  << '\n' << SString(50, '=');
 }
 
 /****** DESSERT CLASS ******/
@@ -103,7 +118,8 @@ Dessert::Dessert(const Dessert& origin)
 
 std::ostream& Dessert::display(std::ostream& os) const
 {
-    return Food_Item::display(os) << "\nSugars: " << sugars << SString(50, '=');
+    return Food_Item::display(os) << "\nSugars: " << sugars  << '\n' 
+                                  << SString(50, '=');
 }
 
 /****** BEVERAGE CLASS ******/
@@ -118,7 +134,7 @@ Beverage::Beverage(const Beverage& origin)
 std::ostream& Beverage::display(std::ostream& os) const
 {
     return Food_Item::display(os) << "\nSugars: " << sugars << "\nAlcoholic: " 
-                                  << alcoholic << SString(50, '=');
+                                  << alcoholic  << '\n' << SString(50, '=');
 }
 
 /****** FOOD_ITEM FACTORIES ******/

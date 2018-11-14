@@ -6,11 +6,11 @@ Brief: Implementation file for binary search tree, b_node class and the forward
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 4
+Assignment: program 3
 
-Date: 07/24/2018
+Date: 11/01/2018
 */
 
 #ifndef BINARY_TREE_CPP

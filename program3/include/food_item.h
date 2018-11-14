@@ -1,7 +1,10 @@
 /*
 File: food_item.h
 
-Brief: 
+Brief:  Food Item acts as the abstract base class for all objects in the 
+        hierarchy. Food Item base class manages all common attributes relevant 
+        to an item of food. Food Item defines virtual methods as well as have
+        its comparison operators overloaded to compare calorie counts.
 
 Author: Alexander DuPree
 
@@ -21,14 +24,21 @@ class Food_Item
 {
   public:
 
+    // Default constructor assigns null equivalent values
     Food_Item(const char* name = "N/A", int cal = 0, bool vegan = 0, 
               bool gluten_free = 0, bool nuts = 0);
 
+    // Copy Constructor
     Food_Item(const Food_Item& origin);
 
+    // Virtual Destructor is undefined as Food Item does not manage any resources
     virtual ~Food_Item();
 
+    // Displays all attributes in a readable format
     virtual void display() const;
+
+    // Returns the name of the food item
+    const SString& dish_name() const;
 
     int total_calories() const;
 
@@ -47,13 +57,16 @@ class Food_Item
 
     int calories;
 
-    bool vegan;
+    bool vegan; 
     bool gluten_free;
     bool contains_nuts;
 
     virtual std::ostream& display(std::ostream& os) const;
 
   private:
+
+    // Returns "Yes" or "No" based on flags status
+    const char* print_status (bool flag) const;
 
 };
 
@@ -109,6 +122,7 @@ class Beverage : public Dessert
 };
 
 /****** FOOD_ITEM FACTORIES ******/
+
 class Food_Item_Factory
 {
   public:

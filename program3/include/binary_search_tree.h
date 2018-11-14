@@ -123,7 +123,7 @@ class binary_tree
     // Returns the number of leaves
     unsigned leaves();
 
-    /****** OEPRATORS ******/
+    /****** OPERATORS ******/
 
     // Returns an object with the matching key
     const value_type& operator[](const key_type& key) const;
@@ -164,7 +164,7 @@ class binary_tree
     value_type _default_object; // Default object is return on failed searches
 
     queue _traversal_queue; // Stores the inorder traversal state into a queue, 
-                            // The iteratros utilize the queue to traverse to the
+                            // The iterators utilize the queue to traverse to the
                             // correct node
 
     /****** SUBROUTINES ******/
@@ -175,7 +175,7 @@ class binary_tree
 
     /****** RECURSIVE HELPERS ******/
 
-    // Returns the numbner of nodes copied
+    // Returns the number of nodes copied
     unsigned copy_tree(b_node*& dest, b_node* source);
 
     // Inserts the data at a leaf

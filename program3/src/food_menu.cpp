@@ -23,10 +23,15 @@ Food_Menu::~Food_Menu()
     return;
 }
 
-void Food_Menu::add_item(const Food_Item_Factory* factory)
+Food_Menu& Food_Menu::add_item(const Food_Item_Factory* factory)
 {
     Food_Item* temp = factory->create();
     insert(temp->total_calories(), temp);
-    return;
+    return *this;
+}
+
+Food_Menu& Food_Menu::operator += (const Food_Item_Factory* factory)
+{
+    return add_item(factory);
 }
 

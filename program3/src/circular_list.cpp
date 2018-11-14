@@ -7,11 +7,11 @@ Description: Implementation for templated circular_linked_list class. Defines
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 4
+Assignment: program 3
 
-Date: 07/11/2018
+Date: 11/01/2018
 */
 
 #ifndef CIRCULAR_LIST_CPP
