@@ -1,7 +1,10 @@
 /*
 File: rental_factory.h
 
-Description:
+Description: rental_factory.h contains the declarations of all abstract factory
+             classes used in our system. The Rental_Transport_Factory acts as
+             the abstract base class for other factory objects and defines 
+             methods for creation.
 
 Author: Alexander DuPree
 
@@ -27,16 +30,19 @@ class Rental_Transport_Factory
 
       virtual ~Rental_Transport_Factory();
 
+      // Returns a new Rental_Transport object
       virtual Rental_Transport* create() const = 0;
 
   protected:
 
-      Location* loc;
+      Location* loc; // Location of the rental transport
 
-      int* base_attributes;
+      int* base_attributes; // Contains the ID and Miles base attributes
 
+      // Polls user for location info
       Location* get_location() const;
 
+      // Polls user for base attribute info
       int* get_base_attributes() const;
 
 

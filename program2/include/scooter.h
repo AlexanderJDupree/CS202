@@ -1,7 +1,8 @@
 /*
 File: scooter.h
 
-Description:
+Description: Scooter is derived from the Rental_Transport abstract base class 
+             and defines the virtual methods outlined in the interface.
 
 Author: Alexander DuPree
 
@@ -23,21 +24,24 @@ class Scooter : public Rental_Transport
 
     Scooter(int id = 0, int miles = 0, int charge = 0, Location loc = Location());
 
-    void display() const; // Override
+    // Display Rental_Transport + Scooter information
+    void display() const;
 
+    // Returns a service_status object reflecting the battery charge level
     service_status status() const;
 
-    float rate() const; // Override
+    // Returns the per mile rate of the scooter
+    float rate() const;
 
-    float earnings() const; // Override
+    // Returns the total earnings of the scooter unit
+    float earnings() const;
 
+    // Returns the currnet battery charge level
     int battery_level() const;
 
   protected:
 
-    int battery;
-
-  private:
+    int battery; // Represents the battery level of the unit
 
 };
 

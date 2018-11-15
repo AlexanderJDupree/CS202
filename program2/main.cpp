@@ -1,7 +1,8 @@
 /*
 File: main.cpp
 
-Description: 
+Description: Main act as the entry point for program2. Also defines basic 
+             menu presentation methods.
 
 Author: Alexander DuPree
 

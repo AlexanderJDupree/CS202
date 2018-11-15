@@ -1,7 +1,8 @@
 /*
 File: zip_car.h
 
-Description:
+Description: Zip Car is derived from the Rental Transport abstract base class 
+             and defines the virtual methods outlined in the interface.
 
 Author: Alexander DuPree
 

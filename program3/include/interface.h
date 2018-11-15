@@ -32,6 +32,7 @@ namespace Interface
 
     bool get_bool(const char* prompt = "\nYes or No?");
 
+    // Reads input into a buffer, client is responsible for allocation/deallocation
     char* get_char_input(char* buffer, int size, const char* prompt = "\n> ");
 
     // Prints a prompt, waits for input

@@ -1,15 +1,15 @@
 /*
 File: interface.cpp
 
-Description: Implementation file for the Interface class
+Description: Implementation file for the Interface namespace. 
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 4
+Assignment: program 2
 
-Date: 06/27/2018
+Date: 10/28/2018
 */
 
 #include "interface.h"

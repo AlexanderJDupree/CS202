@@ -17,6 +17,8 @@ Date: 10/23/2018
 
 #include "location.h"
 
+// service status struct acts as a basic abstract data type for packaging an
+// rental transport's repair status and a boolean flag together
 struct service_status
 {
     service_status(const char* status, bool in_service)

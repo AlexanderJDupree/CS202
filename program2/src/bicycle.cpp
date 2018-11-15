@@ -1,7 +1,8 @@
 /*
 File: bicycle.cpp
 
-Description:
+Description: Implementation file for the Bicycle class. Defines the virtual 
+             methods outlined in the Rental Transport interface.
 
 Author: Alexander DuPree
 

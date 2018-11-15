@@ -1,7 +1,8 @@
 /*
 File: location.cpp
 
-Description:
+Description: Implementation file for the Location class. Defines methods for 
+             construction, destruction, and operator overloads. 
 
 Author: Alexander DuPree
 

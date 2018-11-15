@@ -1,7 +1,7 @@
 /*
 File: rental_factory.cpp
 
-Description:
+Description: Implementation file for all Rental_Transport factories.
 
 Author: Alexander DuPree
 

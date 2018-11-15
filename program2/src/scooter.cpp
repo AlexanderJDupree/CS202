@@ -1,7 +1,8 @@
 /*
 File: scooter.cpp
 
-Description:
+Description: Implementation file for the Scooter derived class. Defines virtual 
+             methods outlined in the base Rental Transport abstract class.
 
 Author: Alexander DuPree
 

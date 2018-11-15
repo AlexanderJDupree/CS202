@@ -1,15 +1,17 @@
 /*
 File: interface.h
 
-Description: 
+Description: interface.h defines common console user interface methods. The
+             interface namespace acts as a collection of useful methods for 
+             grabbing input, repeating loops, etc. 
 
 Author: Alexander DuPree
 
-Class: CS163
+Class: CS202
 
-Assignment: program 4
+Assignment: program 2
 
-Date: 08/03/2018
+Date: 10/28/2018
 */
 
 #ifndef INTERFACE_H

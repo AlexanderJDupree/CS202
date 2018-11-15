@@ -1,7 +1,8 @@
 /*
 File: food_menu.cpp
 
-Brief: 
+Brief: Implementation file for the Food_Menu derived class. Defines methods for 
+       destruction and instantiation of food item objects via factory objects
 
 Author: Alexander DuPree
 

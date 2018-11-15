@@ -1,7 +1,8 @@
 /*
 File: bicycle.h
 
-Description:
+Description: Bicycle is derived from the Rental Transport abstract base class 
+             and defines the virtual methods outlined in the interface.
 
 Author: Alexander DuPree
 
@@ -23,10 +24,13 @@ class Bicycle : public Rental_Transport
 
     Bicycle(int id = 0, int miles = 0, Location loc = Location());
 
+    // Displays Rental_Transport + Bicycle specific information 
     void display() const;
 
+    // Returns the per mile rate of the Bicycle.
     float rate() const;
 
+    // Returns the total earnings of the Bicycle
     float earnings () const;
 };
 

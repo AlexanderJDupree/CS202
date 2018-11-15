@@ -1,7 +1,8 @@
 /*
 File: rental_transport.cpp
 
-Description:
+Description: Implementation file for the non pure virtual methods outlined by 
+             the Rental_Transport  abstract base class. 
 
 Author: Alexander DuPree
 

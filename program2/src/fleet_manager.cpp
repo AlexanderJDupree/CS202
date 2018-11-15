@@ -1,7 +1,8 @@
 /*
 File: fleet_manager.h
 
-Description:
+Description: Implementation file for the Fleet manager derived class. Defines 
+             methods for construction, destruction and other specialized methods
 
 Author: Alexander DuPree
 

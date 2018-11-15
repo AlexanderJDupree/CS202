@@ -131,7 +131,7 @@ SString SString::substring(unsigned begin, unsigned end) const
 {
     if (begin > end || begin > length() || end > length())
     {
-        throw invalid_substring("Error, substring bounds do not exist");
+        throw invalid_substring();
     }
 
     return SString(_data + begin, _data + end + 1);
@@ -259,6 +259,18 @@ std::istream& operator >> (std::istream& is, SString& str)
     delete [] buffer;
 
     return is;
+}
+
+/****** ACCESS OEPRATORS ******/
+
+char SString::operator [] (unsigned index)
+{
+    if (index >= length())
+    {
+        throw bad_index(index);
+    }
+
+    return *(_data + index);
 }
 
 /****** COMPARISON OPERATORS ******/

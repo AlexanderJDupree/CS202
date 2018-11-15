@@ -1,7 +1,8 @@
 /*
 File: zip_car.cpp
 
-Description:
+Description: Implementation file for the Zip Car class. Defines the virtual 
+             methods outlined in the Rental Transport interface.
 
 Author: Alexander DuPree
 

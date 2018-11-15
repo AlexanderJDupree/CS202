@@ -1,7 +1,10 @@
 /*
 File: location.h
 
-Description:
+Description: Location class manages the intersecting location info of rental
+             transport objects. The location class manages the allocation and
+             dealloction of two character arrays, these arrays reperesent the
+             intersection location (i.e. 4th and Harrison) of the object.
 
 Author: Alexander DuPree
 
@@ -32,6 +35,7 @@ class Location
 
     /****** OPERATORS ******/
 
+    // Locations are equal if both streets match.
     bool operator == (const self_type& rhs);
 
     friend std::ostream& operator << (std::ostream& os, const self_type& location);
@@ -44,8 +48,6 @@ class Location
     // Swaps pointers to each other's resources. effectively reassigning 
     // ownership.
     static void swap(self_type& new_list, self_type& old_list);
-
-  protected:
 
   private:
 

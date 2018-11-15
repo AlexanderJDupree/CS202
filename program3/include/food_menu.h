@@ -1,7 +1,11 @@
 /*
 File: food_menu.h
 
-Brief: 
+Brief: Food Menu is a specialized version of the templated binary search tree 
+       class. The Food Menu holds a upcasted Food Item objects, these objects
+       are sorted by caloric values. The Food Menu can instantiate objects with
+       factories or receive pointers to food item objects. The Food Menu WILL 
+       deallocate all food item objects on the menu upon destruction. 
 
 Author: Alexander DuPree
 
