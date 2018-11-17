@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="994700a4-f929-488e-ab22-92821b16bada" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1891185934">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="66268" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="66268" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="2" />
+          <entry key="java" value="27" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="27" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/program4/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/B_TreeTest.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/Tree_234.java" />
+        <option value="$PROJECT_DIR$/tests/com/balanced_tree/Tree_234_Test.java" />
+        <option value="$PROJECT_DIR$/tests/com/balanced_tree/B_TreeTest.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/Entry.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" />
+        <option value="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="50" />
+    <option name="y" value="74" />
+    <option name="width" value="1820" />
+    <option name="height" value="956" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavadocJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>DanglingJavadoc</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="balanced_tree" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="balanced_tree" type="462c0819:PsiDirectoryNode" />
+              <item name="B_Tree.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="program4" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="balanced_tree" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="program4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542438582819" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.balanced_tree" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.balanced_tree" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.B_Tree_Test.preorder_traversal">
+    <configuration name="B_Tree_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="program4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balanced_tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.balanced_tree" />
+      <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B_Tree_Test.empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="program4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balanced_tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.balanced_tree" />
+      <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
+      <option name="METHOD_NAME" value="empty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B_Tree_Test.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="program4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balanced_tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.balanced_tree" />
+      <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
+      <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B_Tree_Test.preorder_traversal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="program4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balanced_tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.balanced_tree" />
+      <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
+      <option name="METHOD_NAME" value="preorder_traversal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="B_Tree_Test.size" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="program4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balanced_tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.balanced_tree" />
+      <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
+      <option name="METHOD_NAME" value="size" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.B_Tree_Test.empty" />
+      <item itemvalue="JUnit.B_Tree_Test.size" />
+      <item itemvalue="JUnit.B_Tree_Test.insert" />
+      <item itemvalue="JUnit.B_Tree_Test" />
+      <item itemvalue="JUnit.B_Tree_Test.preorder_traversal" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.B_Tree_Test.preorder_traversal" />
+        <item itemvalue="JUnit.B_Tree_Test.insert" />
+        <item itemvalue="JUnit.B_Tree_Test" />
+        <item itemvalue="JUnit.B_Tree_Test.size" />
+        <item itemvalue="JUnit.B_Tree_Test.empty" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="994700a4-f929-488e-ab22-92821b16bada" name="Default Changelist" comment="" />
+      <created>1542320176970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542320176970</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 40m 07s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 42m 09s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 43m 28s.xml">
+      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 45m 16s.xml">
+      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 49m 53s.xml">
+      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 50m 28s.xml">
+      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 51m 30s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 00m 18s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 01m 50s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 09m 45s.xml">
+      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="6" width="1920" height="1074" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16354166" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32920536" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32920536" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32920536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/B_TreeTest.java" />
+    <entry file="file://$PROJECT_DIR$/tests/com/balanced_tree/Tree_234_Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/Tree_234.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar!/org/junit/jupiter/api/AssertEquals.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar!/org/junit/jupiter/api/Assertions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/program4/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/Entry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/B_Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#2381#2382#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2488#2489#0" expanded="true" />
+            <element signature="e#2514#2515#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+            <element signature="e#2464#2465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
