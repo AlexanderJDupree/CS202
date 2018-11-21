@@ -79,11 +79,45 @@ class B_Tree_Test {
     @Test
     void preorder_traversal() {
 
-        int [] keys = { 4, 3, 2, 1, 0, 5 };
-        char [] vals = { 'a', 'b', 'c', 'd', 'e', 'f' };
-        int [] expected = { 3, 0, 1, 2, 4, 5 };
+        int [] keys = { 40, 30, 20, 10, 0, 50, 60, 5, 70, 45, 48, 49, 75, 80, 65, 49, 49 };
+        char [] vals = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's'};
+        int [] expected = { 30, 50, 10, 0, 5, 20, 45, 49, 40, 48, 49, 49, 70, 60, 65, 75, 80 };
 
         build_tree(keys, vals);
 
-        test.preorder_traversal(new Assert_Tree(build_entries(expected, vals))); }
+        test.preorder_traversal(new Display_All());
+
+        test.preorder_traversal(new Assert_Tree(build_entries(expected, vals)));
+    }
+
+    @Test
+    void height() {
+        int [] keys = { 40, 30, 20, 10, 0, 50, 60, 5, 70, 45, 48, 49, 75, 80, 65, 49, 49 };
+        char [] vals = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's'};
+
+        build_tree(keys, vals);
+
+        assertEquals(3, test.height());
+    }
+
+    @Test
+    void leaves() {
+        int [] keys = { 40, 30, 20, 10, 0, 50, 60, 5, 70, 45, 48, 49, 75, 80, 65, 49, 49 };
+        char [] vals = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's'};
+
+        build_tree(keys, vals);
+
+        assertEquals(7, test.leaves());
+    }
+
+    @Test
+    void find() {
+        int [] keys = { 40, 30, 20, 10, 0, 50, 60, 5, 70, 45, 48, 49, 75, 80, 65, 49, 49 };
+        char [] vals = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's'};
+
+        build_tree(keys, vals);
+
+        assertEquals(0, test.find(49).compareTo('m'));
+        assertNull(test.find(101));
+    }
 }

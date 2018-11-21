@@ -1,10 +1,9 @@
 package com.balanced_tree;
 
-import java.util.Iterator;
 import java.util.function.Consumer;
 
+// TODO refactor Functor interface to actually be useful
 interface Functor extends Consumer<Entry> {
-
 }
 
 class Display_All implements Functor {
@@ -28,7 +27,7 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
     }
 
     B_Tree(int degree) {
-        root = new B_Node<>(degree);
+        root = new B_Node<>(degree, null);
     }
 
     /****** CAPACITY ******/
@@ -54,12 +53,37 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
     /**
      * @return the height of the tree, 1 element will return a height of 1
      */
-    //int height();
+    int height() {
+        return height(root);
+    }
+
+    private int height(B_Node<Key, Value> root) {
+        if (root.leaf()) {
+            return 1;
+        }
+
+        return 1 + height(root.children.get(0));
+    }
 
     /**
      * @return number of leaves
      */
-    //int leaves();
+    int leaves() {
+        return leaves(root);
+    }
+
+    private int leaves(B_Node<Key, Value> root) {
+        if(root.leaf()) {
+            return 1;
+        }
+
+        int total = 0;
+        for(B_Node<Key, Value> child : root.children) {
+            total += leaves(child);
+        }
+
+        return total;
+    }
 
     /****** MODIFIERS ******/
 
@@ -67,36 +91,31 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
      * @param key used for ordering and associated Value val
      * @return Self Reference for chaining
      */
-    B_Tree<Key, Value> insert(Key key, Value val)
-    {
-        if (root.full())
-        {
-            root.split();
-        }
+    B_Tree<Key, Value> insert(Key key, Value val) {
 
+        if (root.full()){
+            root.split_root();
+        }
         insert(root, new Entry<>(key, val));
         return this;
     }
 
-    private void insert(B_Node<Key, Value> root, Entry<Key, Value> entry)
-    {
+    private void insert(B_Node<Key, Value> root, Entry<Key, Value> entry) {
         // Check if node is full
-        if (root.full())
-        {
+        if (root.full()) {
             root.split();
-            return;
+            root = root.parent;
         }
 
         // If node is a leaf, add entry
-        if (root.leaf())
-        {
+        if (root.leaf()) {
             root.insert(entry);
             ++size;
             return;
         }
 
         // Insert with r-call to correct child
-        insert(root.children.get(root.find_path(entry)), entry);
+        insert(root.find_path(entry), entry);
     }
 
     /**
@@ -104,9 +123,10 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
      */
     B_Tree<Key, Value> clear() {
 
-        root = new B_Node<>(root.degree());
+        root = new B_Node<>(root.degree(), null);
 
         size = 0;
+
         return this;
     }
 
@@ -114,9 +134,26 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
 
     /**
      * @param key is the object the comparator will use to determine equality
-     * @return T reference to the first object matching equal to the key
+     * @return Value OR null if no matching key is found
      */
-    //T find(T key);
+    Value find(Key key) {
+        return find(root, key);
+    }
+
+    private Value find(B_Node<Key, Value> root, Key key) {
+
+        Value target = root.find(key);
+        if(target != null) {
+            return target;
+        }
+
+        // No  matching key found
+        if (root.leaf()) {
+            return null;
+        }
+
+        return find(root.find_path(key), key);
+    }
 
     /****** TRAVERSAL ******/
 
@@ -125,15 +162,11 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
      * @param functor functor implementing object
      * @return number of nodes visited
      */
-    public int preorder_traversal(Functor functor) {
+    int preorder_traversal(Functor functor) {
         return preorder_traversal(root, functor);
     }
 
     private int preorder_traversal(B_Node<Key, Value> root, Functor functor) {
-        if (root == null)
-        {
-            return 0;
-        }
 
         root.for_each(functor);
 
@@ -143,4 +176,5 @@ class B_Tree<Key extends Comparable<? super Key>, Value>
         }
         return ++total;
     }
+
 }

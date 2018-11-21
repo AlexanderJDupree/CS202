@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="994700a4-f929-488e-ab22-92821b16bada" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/balanced_tree/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/program4/com/balanced_tree/B_Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/program4/com/balanced_tree/B_Tree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/program4/com/balanced_tree/B_Tree_Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/program4/com/balanced_tree/B_Tree_Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,33 +20,34 @@
     <session id="1891185934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="66268" />
+          <entry key="java" value="98824" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="66268" />
+          <entry key="JAVA" value="98824" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
-          <entry key="java" value="27" />
+          <entry key="class" value="3" />
+          <entry key="java" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="27" />
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="37" />
         </counts>
       </usages-collector>
     </session>
@@ -74,9 +75,9 @@
         <option value="$PROJECT_DIR$/tests/com/balanced_tree/Tree_234_Test.java" />
         <option value="$PROJECT_DIR$/tests/com/balanced_tree/B_TreeTest.java" />
         <option value="$PROJECT_DIR$/src/com/balanced_tree/Entry.java" />
-        <option value="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" />
-        <option value="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" />
         <option value="$PROJECT_DIR$/src/com/balanced_tree/B_Node.java" />
+        <option value="$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java" />
+        <option value="$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java" />
       </list>
     </option>
   </component>
@@ -112,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,7 +173,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -179,7 +180,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542438582819" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542832830592" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -208,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.B_Tree_Test.preorder_traversal">
+  <component name="RunManager" selected="JUnit.B_Tree_Test.inorder_traversal">
     <configuration name="B_Tree_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="program4" />
       <extension name="coverage">
@@ -223,7 +224,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="B_Tree_Test.empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="B_Tree_Test.find" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="program4" />
       <extension name="coverage">
         <pattern>
@@ -233,13 +234,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.balanced_tree" />
       <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
-      <option name="METHOD_NAME" value="empty" />
+      <option name="METHOD_NAME" value="find" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="B_Tree_Test.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="B_Tree_Test.height" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="program4" />
       <extension name="coverage">
         <pattern>
@@ -249,13 +250,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.balanced_tree" />
       <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
-      <option name="METHOD_NAME" value="insert" />
+      <option name="METHOD_NAME" value="height" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="B_Tree_Test.preorder_traversal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="B_Tree_Test.inorder_traversal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="program4" />
       <extension name="coverage">
         <pattern>
@@ -265,13 +266,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.balanced_tree" />
       <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
-      <option name="METHOD_NAME" value="preorder_traversal" />
+      <option name="METHOD_NAME" value="inorder_traversal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="B_Tree_Test.size" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="B_Tree_Test.leaves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="program4" />
       <extension name="coverage">
         <pattern>
@@ -281,26 +282,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.balanced_tree" />
       <option name="MAIN_CLASS_NAME" value="com.balanced_tree.B_Tree_Test" />
-      <option name="METHOD_NAME" value="size" />
+      <option name="METHOD_NAME" value="leaves" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.B_Tree_Test.empty" />
-      <item itemvalue="JUnit.B_Tree_Test.size" />
-      <item itemvalue="JUnit.B_Tree_Test.insert" />
       <item itemvalue="JUnit.B_Tree_Test" />
-      <item itemvalue="JUnit.B_Tree_Test.preorder_traversal" />
+      <item itemvalue="JUnit.B_Tree_Test.height" />
+      <item itemvalue="JUnit.B_Tree_Test.leaves" />
+      <item itemvalue="JUnit.B_Tree_Test.find" />
+      <item itemvalue="JUnit.B_Tree_Test.inorder_traversal" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.B_Tree_Test.preorder_traversal" />
-        <item itemvalue="JUnit.B_Tree_Test.insert" />
+        <item itemvalue="JUnit.B_Tree_Test.inorder_traversal" />
+        <item itemvalue="JUnit.B_Tree_Test.find" />
+        <item itemvalue="JUnit.B_Tree_Test.leaves" />
+        <item itemvalue="JUnit.B_Tree_Test.height" />
         <item itemvalue="JUnit.B_Tree_Test" />
-        <item itemvalue="JUnit.B_Tree_Test.size" />
-        <item itemvalue="JUnit.B_Tree_Test.empty" />
       </list>
     </recent_temporary>
   </component>
@@ -318,35 +319,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 40m 07s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test - 2018.11.20 at 21h 15m 12s.xml">
+      <configuration name="B_Tree_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 42m 09s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test - 2018.11.20 at 21h 18m 24s.xml">
+      <configuration name="B_Tree_Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 43m 28s.xml">
-      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_height - 2018.11.20 at 21h 34m 33s.xml">
+      <configuration name="B_Tree_Test.height" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 45m 16s.xml">
-      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_leaves - 2018.11.20 at 21h 41m 10s.xml">
+      <configuration name="B_Tree_Test.leaves" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 49m 53s.xml">
-      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_find - 2018.11.21 at 12h 27m 26s.xml">
+      <configuration name="B_Tree_Test.find" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_insert - 2018.11.16 at 22h 50m 28s.xml">
-      <configuration name="B_Tree_Test.insert" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_find - 2018.11.21 at 12h 29m 32s.xml">
+      <configuration name="B_Tree_Test.find" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 22h 51m 30s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_find - 2018.11.21 at 12h 30m 28s.xml">
+      <configuration name="B_Tree_Test.find" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 00m 18s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_find - 2018.11.21 at 12h 31m 20s.xml">
+      <configuration name="B_Tree_Test.find" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 01m 50s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_inorder_traversal - 2018.11.21 at 12h 40m 14s.xml">
+      <configuration name="B_Tree_Test.inorder_traversal" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="B_Tree_Test_preorder_traversal - 2018.11.16 at 23h 09m 45s.xml">
-      <configuration name="B_Tree_Test.preorder_traversal" configurationId="JUnit" />
+    <history-entry file="B_Tree_Test_inorder_traversal - 2018.11.21 at 12h 40m 33s.xml">
+      <configuration name="B_Tree_Test.inorder_traversal" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -409,28 +410,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="306">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="e#295#296#0" expanded="true" />
             <element signature="e#326#327#0" expanded="true" />
@@ -444,40 +434,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/B_Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+        <state relative-caret-position="255">
+          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
             <element signature="e#681#682#0" expanded="true" />
             <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#2381#2382#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#2488#2489#0" expanded="true" />
-            <element signature="e#2514#2515#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+            <element signature="e#4499#4500#0" expanded="true" />
+            <element signature="e#4572#4573#0" expanded="true" />
+            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="e#4641#4642#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/balanced_tree/B_Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        <state relative-caret-position="391">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+          <folding>
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#2871#2872#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#2976#2977#0" expanded="true" />
+            <element signature="e#3032#3033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/balanced_tree/B_Tree_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#2408#2409#0" expanded="true" />
-            <element signature="e#2464#2465#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
           </folding>
         </state>
       </provider>
