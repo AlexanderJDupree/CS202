@@ -1,0 +1,15 @@
+DECISION
+10 | You see a red door and a black door, which do you choose? | Red Door | Black Door |
+20 | You see a fork in the road, where do you go? | Left | Right |
+25 | It looks like the path splits ahead, where do you go? | Right | Left |
+25 | A man approaches you and asks if you desire to take the red pill or the blue pill | Red | Blue |
+
+CHANCE
+10 | A man approaches you and asks you to call a coin toss. Type 1 for heads, 2 for tails. | 1 | 2 |
+20 | A dice is to be rolled, what number do you guess will be rolled? (1 - 6) | 1 | 6 |
+25 | Two dice are to be rolled, what number do you guess will be rolled? (2 - 12) | 2 | 12 |
+
+RIDDLE
+20 | What gets bigger the more you take away from it? | hole |
+25 | What weighs more? A pound of feathers or a pound of tar? | same |
+25 | What gets wet when drying? | towel |

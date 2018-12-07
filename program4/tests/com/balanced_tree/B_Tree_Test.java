@@ -85,7 +85,7 @@ class B_Tree_Test {
 
         build_tree(keys, vals);
 
-        test.preorder_traversal(new Display_All());
+        test.display_all();
 
         test.preorder_traversal(new Assert_Tree(build_entries(expected, vals)));
     }
